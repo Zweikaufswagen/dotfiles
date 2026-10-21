@@ -1,0 +1,18 @@
+[user]
+    name = Luca Zieboll
+    email = Luca.Zieboll@pbit-systeme.de
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = false
+
+[core]
+    editor = code --wait
+
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    lg = log --oneline --graph --all
