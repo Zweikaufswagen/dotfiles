@@ -92,3 +92,4 @@ if [[ -n ${STARSHIP_CONFIG:-} && $STARSHIP_CONFIG != "${XDG_CONFIG_HOME:-$HOME/.
 fi
 
 printf '\nFertig! Starte zsh mit: exec zsh\n'
+printf 'VSCodium nutzt in diesem Repo AnnotationMNerdFont aus .vscode/settings.json.\n'

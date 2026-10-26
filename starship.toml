@@ -1,5 +1,5 @@
 # Kompakter Catppuccin-Mocha-Prompt mit Powerline-Segmenten.
-# Benötigt eine Nerd Font im Terminal.
+# Terminal-Schrift: AnnotationMNerdFont (in VSCodium konfiguriert).
 "$schema" = 'https://starship.rs/config-schema.json'
 
 palette = 'catppuccin_mocha'

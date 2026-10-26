@@ -33,6 +33,24 @@ Falls `STARSHIP_CONFIG` bereits gesetzt ist, muss es auf die verlinkte
 `starship.toml` zeigen oder entfernt werden. Die Login-Shell wird nicht geändert;
 zum direkten Start in VSCodium das zsh-Terminalprofil auswählen.
 
+## Schrift in VSCodium
+
+Die auf deinem PC bereits installierte **AnnotationMNerdFont** ist in
+`.vscode/settings.json` als Terminal-Schrift eingetragen. Öffne diesen Ordner
+in VSCodium; die Einstellung gilt für diesen Workspace, auch beim Arbeiten in WSL.
+Eine zusätzliche Font-Installation in WSL ist nicht nötig.
+
+Für alle Projekte dieselbe Einstellung in VSCodium unter
+**Einstellungen (JSON) öffnen** in die Benutzereinstellungen übernehmen:
+
+```json
+"terminal.integrated.fontFamily": "'AnnotationMNerdFont', monospace"
+```
+
+Falls die Schrift vom Betriebssystem unter einem abweichenden Familiennamen
+angezeigt wird, diesen Namen statt des Font-Dateinamens verwenden. Nach einer
+Font-Installation VSCodium neu starten. Starship selbst legt keine Schrift fest.
+
 ## Anpassen
 
 Farben und Segmente stehen in `starship.toml`, die Shell-Konfiguration in `.zshrc`.
