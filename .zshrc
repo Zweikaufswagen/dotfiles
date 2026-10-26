@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="" # Starship übernimmt den Prompt.
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -78,7 +78,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
@@ -109,15 +109,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Git-Branch im Prompt anzeigen
-autoload -Uz vcs_info
-
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git:*' formats ' (%b)'
-
-precmd_vcs_info() { vcs_info }
-precmd_functions+=(precmd_vcs_info)
-
-setopt prompt_subst
-
-PROMPT='%n@%m %~${vcs_info_msg_0_} %# '
+# Starship: Catppuccin Powerline (siehe starship.toml).
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init zsh)"
+else
+    PROMPT='%n@%m %~ %# '
+fi

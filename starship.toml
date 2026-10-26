@@ -1,0 +1,64 @@
+# Kompakter Catppuccin-Mocha-Prompt mit Powerline-Segmenten.
+# Benötigt eine Nerd Font im Terminal.
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = 'catppuccin_mocha'
+format = """
+[](peach)\
+$username\
+[](fg:peach bg:yellow)\
+$directory\
+[](fg:yellow bg:green)\
+$git_branch\
+$git_status\
+[](fg:green bg:surface0)\
+$time\
+[](surface0)\
+$line_break\
+$character"""
+
+[palettes.catppuccin_mocha]
+text = '#cdd6f4'
+peach = '#fab387'
+yellow = '#f9e2af'
+green = '#a6e3a1'
+red = '#f38ba8'
+base = '#1e1e2e'
+surface0 = '#313244'
+
+[username]
+show_always = true
+style_user = 'fg:base bg:peach'
+style_root = 'fg:base bg:peach bold'
+format = '[ $user ]($style)'
+
+[directory]
+style = 'fg:base bg:yellow'
+format = '[ $path$read_only ]($style)'
+truncation_length = 3
+truncation_symbol = '…/'
+read_only = ' '
+read_only_style = 'fg:base bg:yellow'
+
+[git_branch]
+symbol = ''
+style = 'fg:base bg:green'
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = 'fg:base bg:green'
+format = '[($all_status$ahead_behind )]($style)'
+
+[time]
+disabled = false
+time_format = '%R'
+style = 'fg:text bg:surface0'
+format = '[  $time ]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+vimcmd_symbol = '[❮](bold green)'
